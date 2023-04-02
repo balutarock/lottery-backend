@@ -6,6 +6,13 @@ var cors = require("cors");
 
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://127.0.0.1:27017/lottery")
+//         console.log("DB connection: ", dbConnection)
+// mongoose.set('strictQuery', true);
+
+// process.on('unhandledRejection', (reason, promise) => {
+//     console.error('Unhandled Rejection at:', promise, 'reason:', reason);
+//     // Your code here
+// });
 
 const app = express();
 
@@ -28,6 +35,7 @@ app.use(express.json())
 
 const initializeDbAndServer = async () => {
     try {
+
         app.listen(3001, () =>
             console.log(`Server Running at http://localhost:${"3001"}/`)
         );
